@@ -5,6 +5,6 @@
 
     <h1 class="text-4xl mb-28">{{ $quote->text }}</h1>
 
-    <x-title name="The Shawshank Redemption" />
+    <x-title :name="$quote->movie->title" />
 
 </div>
