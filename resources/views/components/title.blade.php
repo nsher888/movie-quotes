@@ -1,3 +1,3 @@
 @props(['name'])
 
-<a href="/" class="text-4xl underline">{{ $name }}</a>
+<a href="{{ route('show') }}" class="text-4xl underline">{{ $name }}</a>
