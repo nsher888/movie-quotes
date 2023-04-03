@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\Movie;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $quote = App\Models\Quote::inRandomOrder()->first();
-    return view('index', ['quote' => $quote]);
-});
+Route::get('/', [QuoteController::class, 'index']);
 
-Route::get('/movies/{movie:slug}', function (Movie $movie) {
-    return view('show', [
-        'quotes' => $movie->quotes,
-        'movie' => $movie,
-    ]);
-})->name('movies.show');
+Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
