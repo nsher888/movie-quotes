@@ -1,5 +1,4 @@
 <x-layout>
     <x-languages />
-
-    <x-movie-featured />
+    <x-movie-featured :quote="$quote" />
 </x-layout>
