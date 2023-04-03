@@ -7,7 +7,8 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="w-full min-h-screen bg-radial-gradient text-white flex flex-col items-center justify-center static">
+<body
+    class="w-full min-h-screen bg-radial-gradient text-white flex flex-col items-center justify-center static max-w-4xl mx-auto">
     {{ $slot }}
 </body>
 

@@ -1,4 +1,4 @@
-<div class="absolute left-6">
+<div class="absolute left-6 top-[50%]">
     <div class="border-2 border-white rounded-full p-2 mb-4">
         <a href="#">EN</a>
     </div>
