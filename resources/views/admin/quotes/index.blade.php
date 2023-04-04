@@ -13,7 +13,14 @@
         </aside>
         <div class="w-3/4 p-10">
             <div class="container mx-auto py-10">
-                <h1 class="text-4xl text-white font-bold mb-10">Quotes Management</h1>
+                <div class="flex items-center mb-10 gap-6">
+                    <h1 class="text-4xl text-white font-bold ">Quotes Management</h1>
+
+                    <a href="{{ route('admin.quotes.create') }}"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add
+                        Quote</a>
+                </div>
+
 
                 <table class="w-full text-left rounded-lg overflow-hidden">
                     <thead class="bg-gray-800 text-white">
@@ -39,10 +46,17 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 <div class="flex items-center">
-                                    <button
-                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2">Edit</button>
-                                    <button
-                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Delete</button>
+                                    <a href="{{ route('admin.quotes.edit', $quote) }}"
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2">Edit</a>
+
+                                    <form method="POST" action="{{ route('admin.quotes.destroy', $quote->id) }}">
+                                        @csrf
+                                        @method('delete')
+                                        <button
+                                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Delete</button>
+                                    </form>
+
                                 </div>
                             </td>
                         </tr>
