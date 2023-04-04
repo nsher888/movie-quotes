@@ -5,7 +5,7 @@
                 <p class="text-black">
                     Hello, {{ auth()->user()->username }}
                 </p>
-                <form action="/logout" method="post">
+                <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button class="text-red-500" type="submit">Log Out</button>
                 </form>
