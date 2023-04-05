@@ -26,11 +26,11 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest')->
 
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');
 
-Route::get('admin/quotes/create', [QuoteController::class, 'create'])->middleware('auth')->name('admin.quotes.create');
-
-Route::post('admin/quotes', [QuoteController::class, 'store'])->middleware('auth')->name('admin.quotes.store');
-
-Route::get('admin/quotes', [AdminQuoteController::class, 'index'])->name('admin.quotes')->middleware('auth');
-Route::get('admin/quotes/{quote}/edit', [AdminQuoteController::class, 'edit'])->name('admin.quotes.edit')->middleware('auth');
-Route::patch('admin/quotes/{quote}', [AdminQuoteController::class, 'update'])->name('admin.quotes.update')->middleware('auth');
-Route::delete('admin/quotes/{quote}', [AdminQuoteController::class, 'destroy'])->name('admin.quotes.destroy')->middleware('auth');
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+    Route::get('quotes/create', [QuoteController::class, 'create'])->name('admin.quotes.create');
+    Route::post('quotes', [QuoteController::class, 'store'])->name('admin.quotes.store');
+    Route::get('quotes', [AdminQuoteController::class, 'index'])->name('admin.quotes');
+    Route::get('quotes/{quote}/edit', [AdminQuoteController::class, 'edit'])->name('admin.quotes.edit');
+    Route::patch('quotes/{quote}', [AdminQuoteController::class, 'update'])->name('admin.quotes.update');
+    Route::delete('quotes/{quote}', [AdminQuoteController::class, 'destroy'])->name('admin.quotes.destroy');
+});
