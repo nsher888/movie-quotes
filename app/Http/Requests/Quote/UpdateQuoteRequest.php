@@ -11,7 +11,7 @@ class UpdateQuoteRequest extends FormRequest
     {
         return [
             'text' => 'required',
-            'movie_id' => ['required', Rule::exists('movies', 'id')],
+            'movie_id' => 'required|exists:movies,id',
             'thumbnail' => 'image',
         ];
     }
