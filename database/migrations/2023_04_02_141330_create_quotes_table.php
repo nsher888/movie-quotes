@@ -14,7 +14,7 @@ return new class () extends Migration {
             $table->id();
             $table->foreignId('movie_id');
             $table->string('text');
-            $table->string('thumbnail')->nullable();
+            $table->string('thumbnail');
             $table->timestamps();
         });
     }

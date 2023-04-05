@@ -1,7 +1,7 @@
 @props(['quote'])
 
 <div class="flex flex-col items-center">
-    <img src="https://i.ytimg.com/vi/qOv-dw_RwFc/maxresdefault.jpg" class="max-w-2xl rounded-lg mb-16">
+    <img src="{{ $quote->thumbnail }}" class="max-w-2xl rounded-lg mb-16">
 
     <h1 class="text-4xl mb-28">{{ $quote->text }}</h1>
 

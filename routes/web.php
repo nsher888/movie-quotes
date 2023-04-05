@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminQuoteController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\QuoteController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [QuoteController::class, 'index']);
+Route::get('/', [QuoteController::class, 'index'])->name('home');
 
 Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
+
+Route::get('login', [SessionController::class, 'create'])->middleware('guest');
+Route::post('login', [SessionController::class, 'store'])->middleware('guest')->name('login');
+
+Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');
+
+Route::get('admin/quotes', [AdminQuoteController::class, 'index'])->name('admin.quotes')->middleware('auth');
