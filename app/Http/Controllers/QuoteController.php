@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Quote\StoreQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Http\Request;
@@ -23,17 +24,13 @@ class QuoteController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(StoreQuoteRequest $request)
     {
-        $attributes = request()->validate([
-            'text' => 'required',
-            'movie_id' => ['required', Rule::exists('movies', 'id')],
-            'thumbnail' => 'required|image',
-        ]);
+        $validated = $request->validated();
 
-        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        $validated['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
 
-        Quote::create($attributes);
+        Quote::create($validated);
 
         return redirect()->route('admin.quotes');
     }

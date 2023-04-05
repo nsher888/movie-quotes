@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Quote\UpdateQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Http\Request;
@@ -24,19 +25,15 @@ class AdminQuoteController extends Controller
         ]);
     }
 
-    public function update(Quote $quote)
+    public function update(UpdateQuoteRequest $request, Quote $quote)
     {
-        $attributes = request()->validate([
-            'text' => 'required',
-            'movie_id' => ['required', Rule::exists('movies', 'id')],
-            'thumbnail' => 'image',
-        ]);
+        $validated = $request->validated();
 
-        if (isset($attributes['thumbnail'])) {
-            $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        if ($request->hasFile('thumbnail')) {
+            $validated['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
         }
 
-        $quote->update($attributes);
+        $quote->update($validated);
 
         return redirect()->route('admin.quotes');
     }
