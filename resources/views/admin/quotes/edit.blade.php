@@ -4,7 +4,7 @@
 
         <div class="w-3/4 p-10">
             <div class="container mx-auto py-10">
-                <h1 class="text-4xl text-white font-bold mb-10">Edit Quote</h1>
+                <h1 class="text-4xl text-white font-bold mb-10">{{ __('admin.edit_quote') }}</h1>
 
                 <form class="flex flex-col " method="POST" action="{{ route('admin.quotes.update', $quote->id) }}"
                     enctype="multipart/form-data">
@@ -28,7 +28,7 @@
                     <img src="{{ asset('storage/' . $quote->thumbnail) }}" class="w-[100px] rounded-lg">
 
 
-                    <x-form.button>Edit</x-form.button>
+                    <x-form.button>{{ __('admin.edit') }}</x-form.button>
                 </form>
             </div>
         </div>

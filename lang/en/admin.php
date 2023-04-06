@@ -13,11 +13,16 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'username' => 'Username',
-    'password' => 'Password',
-    'sign_in' => 'Sign In',
-    'auth' => 'Authorization',
+    'quote' => 'Quote',
+    'movie' => 'Mvie',
+    'quotes_management' => 'Quotes Management',
+    'movies_management' => 'Movies Management',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'add_quote' => 'Add Quote',
+    'logout' => 'Log Out',
+    'text' => 'Text',
+    'thumbnail' => 'Thumbnail',
+    'create' => 'Create',
+    'hello' => 'Hello',
 ];

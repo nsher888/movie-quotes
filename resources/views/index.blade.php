@@ -4,6 +4,4 @@
 
     <x-movie-featured :quote="$quote" />
 
-    <p>{{ __('sample') }}</p>
-
 </x-layout>

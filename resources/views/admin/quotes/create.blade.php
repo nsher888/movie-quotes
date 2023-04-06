@@ -4,7 +4,7 @@
 
         <div class="w-3/4 p-10">
             <div class="container mx-auto py-10">
-                <h1 class="text-4xl text-white font-bold mb-10">Create Quote</h1>
+                <h1 class="text-4xl text-white font-bold mb-10">{{ __('admin.add_quote') }}</h1>
 
                 <form class="flex flex-col " method="POST" action="{{ route('admin.quotes') }}"
                     enctype="multipart/form-data">
@@ -26,7 +26,7 @@
                     <x-form.input name="thumbnail" type="file" />
 
 
-                    <x-form.button>Create</x-form.button>
+                    <x-form.button>{{ __('admin.create') }}</x-form.button>
                 </form>
             </div>
         </div>
