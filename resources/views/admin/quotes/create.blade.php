@@ -10,7 +10,8 @@
                     enctype="multipart/form-data">
                     @csrf
 
-                    <x-form.input name="text" />
+                    <x-form.input name="text_ka" />
+                    <x-form.input name="text_en" />
 
                     <x-form.label name="movie" />
                     <select id="movie_id" name="movie_id"

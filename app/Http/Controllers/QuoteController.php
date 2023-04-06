@@ -30,7 +30,14 @@ class QuoteController extends Controller
 
         $validated['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
 
-        Quote::create($validated);
+        $quote = new Quote();
+        $quote->text = [
+            'en' => $validated['text_en'],
+            'ka' => $validated['text_ka'],
+        ];
+        $quote->movie_id = $validated['movie_id'];
+        $quote->thumbnail = $validated['thumbnail'];
+        $quote->save();
 
         return redirect()->route('admin.quotes');
     }

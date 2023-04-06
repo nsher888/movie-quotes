@@ -10,7 +10,8 @@ class StoreQuoteRequest extends FormRequest
     public function rules()
     {
         return [
-            'text' => 'required',
+            'text_en' => 'required',
+            'text_ka' => 'required',
             'movie_id' => 'required|exists:movies,id',
             'thumbnail' => 'required|image',
         ];
