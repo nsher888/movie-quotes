@@ -10,10 +10,10 @@ class UpdateQuoteRequest extends FormRequest
     public function rules()
     {
         return [
-            'text.en' => 'required',
-            'text.ka' => 'required',
+            'text.en' => 'required|string',
+            'text.ka' => 'required|string',
             'movie_id' => 'required|exists:movies,id',
-            'thumbnail' => 'image',
+            'thumbnail' => 'required|image',
         ];
     }
 }

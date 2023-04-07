@@ -31,10 +31,7 @@ class QuoteController extends Controller
         $validated['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
 
         $quote = new Quote();
-        $quote->text = [
-            'en' => $validated['text_en'],
-            'ka' => $validated['text_ka'],
-        ];
+        $quote->text = $validated['text'];
         $quote->movie_id = $validated['movie_id'];
         $quote->thumbnail = $validated['thumbnail'];
         $quote->save();
