@@ -41,4 +41,11 @@ class AdminMovieController extends Controller
 
         return redirect()->route('admin.movies');
     }
+
+    public function destroy(Movie $movie)
+    {
+        $movie->delete();
+
+        return redirect()->route('admin.movies');
+    }
 }

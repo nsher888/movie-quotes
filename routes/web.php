@@ -43,4 +43,5 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::post('movies', [AdminMovieController::class, 'store'])->name('admin.movies.store');
     Route::get('movies/{id}/edit', [AdminMovieController::class, 'edit'])->name('admin.movies.edit');
     Route::patch('movies/{movie}', [AdminMovieController::class, 'update'])->name('admin.movies.update');
+    Route::delete('movies/{movie}', [AdminMovieController::class, 'destroy'])->name('admin.movies.destroy');
 });
