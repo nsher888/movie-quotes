@@ -6,8 +6,7 @@
             <div class="container mx-auto py-10">
                 <h1 class="text-4xl text-white font-bold mb-10">{{ __('admin.edit_movie') }}</h1>
 
-                <form class="flex flex-col " method="POST" "
-                    enctype=" multipart/form-data">
+                <form class="flex flex-col" method="POST" action="{{ route('admin.movies.update', $movie->id) }}">
                     @csrf
                     @method('patch')
 
