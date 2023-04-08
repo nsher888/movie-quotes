@@ -11,7 +11,7 @@
     </div>
 
     <div class="bg-gray-300 h-14 flex items-center justify-center gap-6 border border-b-black hover:bg-gray-400">
-        <a class="text-black">
+        <a href="{{ route('admin.movies') }}" class="text-black">
             {{ __('admin.movies_management') }}
 
         </a>

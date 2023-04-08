@@ -14,13 +14,15 @@ return [
     */
 
     'quote' => 'Quote',
-    'movie' => 'Mvie',
+    'movie' => 'Movie',
     'quotes_management' => 'Quotes Management',
     'movies_management' => 'Movies Management',
+    'created_at' => 'Created At',
     'edit_quote' => 'Edit Quote',
     'edit' => 'Edit',
     'delete' => 'Delete',
     'add_quote' => 'Add Quote',
+    'add_movie' => 'Add Movie',
     'logout' => 'Log Out',
     'text[ka]' => 'Text (Georgian)',
     'text[en]' => 'Text (English)',

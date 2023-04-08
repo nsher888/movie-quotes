@@ -11,8 +11,8 @@
                     @csrf
                     @method('patch')
 
-                    <x-form.input name="text_ka" :value="old('title', $quote->getTranslation('text', 'ka'))" />
-                    <x-form.input name="text_en" :value="old('title', $quote->getTranslation('text', 'en'))" />
+                    <x-form.input name="text[ka]" :value="old('title', $quote->getTranslation('text', 'ka'))" />
+                    <x-form.input name="text[en]" :value="old('title', $quote->getTranslation('text', 'en'))" />
 
                     <x-form.label name="movie" />
                     <select id="movie_id" name="movie_id"

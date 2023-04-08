@@ -13,7 +13,7 @@ class UpdateQuoteRequest extends FormRequest
             'text.en' => 'required|string',
             'text.ka' => 'required|string',
             'movie_id' => 'required|exists:movies,id',
-            'thumbnail' => 'required|image',
+            'thumbnail' => 'image',
         ];
     }
 }
