@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminQuoteController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\SessionController;
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [QuoteController::class, 'index'])->name('home');
+
+Route::get('language/{locale}', [LanguageController::class, 'switchLanguage'])->name('switchLanguage');
 
 Route::get('/movies/{movie:slug}', [MovieController::class, 'show'])->name('movies.show');
 
