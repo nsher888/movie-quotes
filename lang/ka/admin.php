@@ -18,6 +18,7 @@ return [
     'quotes_management' => 'ციტატების მენეჯმენტი',
     'movies_management' => 'ფილმების მენეჯმენტი',
     'edit_quote' => 'ციტატის რედაქტირება',
+    'edit_movie' => 'ფილმის რედაქტირება',
     'created_at' => 'შექმნის თარიღი',
     'edit' => 'რედაქტირება',
     'delete' => 'წაშლა',

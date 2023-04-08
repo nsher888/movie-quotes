@@ -19,6 +19,7 @@ return [
     'movies_management' => 'Movies Management',
     'created_at' => 'Created At',
     'edit_quote' => 'Edit Quote',
+    'edit_movie' => 'Edit Movie',
     'edit' => 'Edit',
     'delete' => 'Delete',
     'add_quote' => 'Add Quote',

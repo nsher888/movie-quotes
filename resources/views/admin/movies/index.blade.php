@@ -41,7 +41,7 @@
 
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 <div class="flex items-center">
-                                    <a href="{{ route('admin.quotes.edit', $movie) }}"
+                                    <a href="{{ route('admin.movies.edit', $movie) }}"
                                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2">{{
                                         __('admin.edit') }}</a>
 

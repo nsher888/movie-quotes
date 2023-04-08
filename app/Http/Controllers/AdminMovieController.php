@@ -24,4 +24,11 @@ class AdminMovieController extends Controller
 
         return redirect()->route('admin.movies');
     }
+
+    public function edit(Movie $movie)
+    {
+        return view('admin.movies.edit', [
+            'movie' => $movie,
+        ]);
+    }
 }
