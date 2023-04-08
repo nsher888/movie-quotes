@@ -18,7 +18,6 @@ class MovieFactory extends Factory
     {
         return [
             'title' => ['en' => $this->faker->sentence, 'ka' => $this->faker->sentence],
-            'slug' => $this->faker->slug,
         ];
     }
 }

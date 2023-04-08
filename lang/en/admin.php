@@ -26,6 +26,8 @@ return [
     'logout' => 'Log Out',
     'text[ka]' => 'Text (Georgian)',
     'text[en]' => 'Text (English)',
+    'title[en]' => 'Title (English)',
+    'title[ka]' => 'Title (Georgian)',
     'thumbnail' => 'Thumbnail',
     'create' => 'Create',
     'hello' => 'Hello',

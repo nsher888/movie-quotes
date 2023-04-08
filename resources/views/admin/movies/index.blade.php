@@ -8,7 +8,7 @@
                 <div class="flex items-center mb-10 gap-6">
                     <h1 class="text-4xl text-white font-bold ">{{ __('admin.movies_management') }}</h1>
 
-                    <a href="{{ route('admin.quotes.create') }}"
+                    <a href="{{ route('admin.movies.create') }}"
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{{
                         __('admin.add_movie') }}</a>
                 </div>

@@ -11,6 +11,8 @@ class Movie extends Model
     use HasFactory;
     use HasTranslations;
 
+    protected $fillable = ['title'];
+
     public $translatable = ['title'];
 
     public function quotes()

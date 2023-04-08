@@ -39,4 +39,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::delete('quotes/{quote}', [AdminQuoteController::class, 'destroy'])->name('admin.quotes.destroy');
 
     Route::get('movies', [AdminMovieController::class, 'index'])->name('admin.movies');
+    Route::get('movies/create', [MovieController::class, 'create'])->name('admin.movies.create');
+    Route::post('movies', [AdminMovieController::class, 'store'])->name('admin.movies.store');
 });
