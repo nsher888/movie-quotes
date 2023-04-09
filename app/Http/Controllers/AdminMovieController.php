@@ -19,8 +19,7 @@ class AdminMovieController extends Controller
     public function store(StoreMovieRequest $request)
     {
         $validated = $request->validated();
-        $movie = new Movie();
-        $movie->title = $validated['title'];
+        $movie = new Movie($validated);
         $movie->save();
 
         return redirect()->route('admin.movies');
