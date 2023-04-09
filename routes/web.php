@@ -30,18 +30,22 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest')->
 
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');
 
-Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
-    Route::get('quotes/create', [QuoteController::class, 'create'])->name('admin.quotes.create');
-    Route::post('quotes', [QuoteController::class, 'store'])->name('admin.quotes.store');
-    Route::get('quotes', [AdminQuoteController::class, 'index'])->name('admin.quotes');
-    Route::get('quotes/{quote}/edit', [AdminQuoteController::class, 'edit'])->name('admin.quotes.edit');
-    Route::patch('quotes/{quote}', [AdminQuoteController::class, 'update'])->name('admin.quotes.update');
-    Route::delete('quotes/{quote}', [AdminQuoteController::class, 'destroy'])->name('admin.quotes.destroy');
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::prefix('quotes')->group(function () {
+        Route::get('/', [AdminQuoteController::class, 'index'])->name('admin.quotes');
+        Route::get('/create', [QuoteController::class, 'create'])->name('admin.quotes.create');
+        Route::post('/', [QuoteController::class, 'store'])->name('admin.quotes.store');
+        Route::get('/{quote}/edit', [AdminQuoteController::class, 'edit'])->name('admin.quotes.edit');
+        Route::patch('/{quote}', [AdminQuoteController::class, 'update'])->name('admin.quotes.update');
+        Route::delete('/{quote}', [AdminQuoteController::class, 'destroy'])->name('admin.quotes.destroy');
+    });
 
-    Route::get('movies', [AdminMovieController::class, 'index'])->name('admin.movies');
-    Route::get('movies/create', [MovieController::class, 'create'])->name('admin.movies.create');
-    Route::post('movies', [AdminMovieController::class, 'store'])->name('admin.movies.store');
-    Route::get('movies/{id}/edit', [AdminMovieController::class, 'edit'])->name('admin.movies.edit');
-    Route::patch('movies/{movie}', [AdminMovieController::class, 'update'])->name('admin.movies.update');
-    Route::delete('movies/{movie}', [AdminMovieController::class, 'destroy'])->name('admin.movies.destroy');
+    Route::prefix('movies')->group(function () {
+        Route::get('/', [AdminMovieController::class, 'index'])->name('admin.movies');
+        Route::get('/create', [MovieController::class, 'create'])->name('admin.movies.create');
+        Route::post('/', [AdminMovieController::class, 'store'])->name('admin.movies.store');
+        Route::get('/{id}/edit', [AdminMovieController::class, 'edit'])->name('admin.movies.edit');
+        Route::patch('/{movie}', [AdminMovieController::class, 'update'])->name('admin.movies.update');
+        Route::delete('/{movie}', [AdminMovieController::class, 'destroy'])->name('admin.movies.destroy');
+    });
 });
