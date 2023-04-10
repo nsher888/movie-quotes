@@ -31,18 +31,24 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest')->
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
-    Route::prefix('quotes')->group(function () {
-        Route::get('/', [AdminQuoteController::class, 'index'])->name('admin.quotes');
+    Route::group(['prefix' => 'quotes'], function () {
         Route::get('/create', [QuoteController::class, 'create'])->name('admin.quotes.create');
         Route::post('/', [QuoteController::class, 'store'])->name('admin.quotes.store');
+    });
+
+    Route::group(['prefix' => 'quotes'], function () {
+        Route::get('/', [AdminQuoteController::class, 'index'])->name('admin.quotes');
         Route::get('/{quote}/edit', [AdminQuoteController::class, 'edit'])->name('admin.quotes.edit');
         Route::patch('/{quote}', [AdminQuoteController::class, 'update'])->name('admin.quotes.update');
         Route::delete('/{quote}', [AdminQuoteController::class, 'destroy'])->name('admin.quotes.destroy');
     });
 
-    Route::prefix('movies')->group(function () {
-        Route::get('/', [AdminMovieController::class, 'index'])->name('admin.movies');
+    Route::group(['prefix' => 'movies'], function () {
         Route::get('/create', [MovieController::class, 'create'])->name('admin.movies.create');
+    });
+
+    Route::group(['prefix' => 'movies'], function () {
+        Route::get('/', [AdminMovieController::class, 'index'])->name('admin.movies');
         Route::post('/', [AdminMovieController::class, 'store'])->name('admin.movies.store');
         Route::get('/{id}/edit', [AdminMovieController::class, 'edit'])->name('admin.movies.edit');
         Route::patch('/{movie}', [AdminMovieController::class, 'update'])->name('admin.movies.update');
