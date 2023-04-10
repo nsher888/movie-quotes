@@ -6,43 +6,46 @@
         <div class="w-3/4 p-10">
             <div class="container mx-auto py-10">
                 <div class="flex items-center mb-10 gap-6">
-                    <h1 class="text-4xl text-white font-bold ">{{ __('admin.quotes_management') }}</h1>
+                    <h1 class="text-4xl text-white font-bold ">{{ __('admin.movies_management') }}</h1>
 
-                    <a href="{{ route('admin.quotes.create') }}"
+                    <a href="{{ route('admin.movies.create') }}"
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{{
-                        __('admin.add_quote') }}</a>
+                        __('admin.add_movie') }}</a>
                 </div>
 
 
                 <table class="w-full text-left rounded-lg overflow-hidden">
                     <thead class="bg-gray-800 text-white">
                         <tr>
-                            <th class="px-6 py-4 text-sm font-medium">{{ __('admin.quote') }}</th>
                             <th class="px-6 py-4 text-sm font-medium">{{ __('admin.movie') }}</th>
-                            <th class="px-6 py-4 text-sm font-medium"></th>
+                            <th class="px-6 py-4 text-sm font-medium">{{ __('admin.created_at') }}</th>
+                            <th class="px-6 py-4 text-sm font-medium">{{ __('admin.movie') }}</th>
                         </tr>
                     </thead>
-                    @foreach ($quotes as $quote)
+                    @foreach ($movies as $movie)
                     <tbody class="bg-white divide-y divide-gray-200">
                         <!-- Quote row -->
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap">
-                                <div class="text-gray-900 font-medium">{{ $quote->text }}</div>
+                                <a href="{{ route('movies.show', $movie->id) }}"" class=" text-gray-900 font-medium">{{
+                                    $movie->title }}</a>
                             </td>
+
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 <div class="text-gray-600 text-sm">
-                                    <a href="/movies/{{ $quote->movie->id }}">
-                                        {{ $quote->movie->title }}
+                                    <a>
+                                        {{ $movie->created_at }}
                                     </a>
                                 </div>
                             </td>
+
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 <div class="flex items-center">
-                                    <a href="{{ route('admin.quotes.edit', $quote) }}"
+                                    <a href="{{ route('admin.movies.edit', $movie) }}"
                                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2">{{
                                         __('admin.edit') }}</a>
 
-                                    <form method="POST" action="{{ route('admin.quotes.destroy', $quote->id) }}">
+                                    <form method="POST" action="{{ route('admin.movies.destroy', $movie->id) }}">
                                         @csrf
                                         @method('delete')
                                         <button
