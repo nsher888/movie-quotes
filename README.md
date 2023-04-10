@@ -14,13 +14,11 @@ Movie Quotes app with random quote on the main page, movie page where you can vi
 -   [Prerequisites](#prerequisites)
 -   [Tech Stack](#tech-stack)
 -   [Getting Started](#getting-started)
--   [Migrations](#migration)
 -   [Development](#development)
--   [Deployment with CI / CD](#deployment-with-ci--cd)
 -   [Project Structure](#project-structure)
--   [Service Interaction Map](#service-interaction-map)
--   [Server Infrastructure](#server-infrastructure)
--   [Database Backups](#database-backups)
+-   [Structure Of MySQL](#structure-of-mysql)
+-   [Project Structure](#project-structure)
+-   [Resources](#resources)
 
 #
 
@@ -162,7 +160,7 @@ if you wish to see changes after changing styles with Tailwind CSS, execute:
 
 #
 
-## Resources
+### Resources
 
 -   [Application Design](https://www.figma.com/file/IIJOKK5esgM8uK8pM3D59J/Movie-Quotes?node-id=0%3A1)
 -   [Commit message naming conventions](https://redberry.gitbook.io/resources/other/git-is-semantikuri-komitebi)
