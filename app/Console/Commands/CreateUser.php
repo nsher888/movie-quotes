@@ -7,12 +7,23 @@ use Illuminate\Console\Command;
 
 class CreateUser extends Command
 {
-    protected $signature = 'user:create';
+    protected $signature = 'movie-quotes:create-user';
     protected $description = 'Create a new user';
-    public function handle(): void
+
+    public function handle()
     {
         $username = $this->ask('Enter a username:');
         $password = $this->secret('Enter a password:');
+
+        if (empty($username) || empty($password)) {
+            $this->error('Both username and password are required.');
+            return;
+        }
+
+        if (User::where('username', $username)->exists()) {
+            $this->error('Username already exists.');
+            return;
+        }
 
         $user = new User();
         $user->username = $username;
