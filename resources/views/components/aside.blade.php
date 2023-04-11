@@ -10,6 +10,8 @@
         </a>
     </div>
 
+
+
     <div class="bg-gray-300 h-14 flex items-center justify-center gap-6 border border-b-black hover:bg-gray-400">
         <a href="{{ route('admin.movies') }}" class="text-black">
             {{ __('admin.movies_management') }}
@@ -25,5 +27,7 @@
             </button>
         </form>
     </div>
+
+    <x-languages class="bg-gray-400 left-8 p-5" />
 
 </aside>
