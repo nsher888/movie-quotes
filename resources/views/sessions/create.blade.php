@@ -10,7 +10,8 @@
                     </label>
                     <input
                         class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
-                        id="username" name="username" type="text" placeholder="{{ __('auth.username') }}" required>
+                        id="username" name="username" type="text" placeholder="{{ __('auth.username') }}"
+                        value="{{ old('username') }}">
                     @error('username')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
@@ -22,7 +23,7 @@
                     </label>
                     <input
                         class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
-                        id="password" name="password" type="password" placeholder="{{ __('auth.password') }}" required>
+                        id="password" name="password" type="password" placeholder="{{ __('auth.password') }}">
                     @error('password')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
