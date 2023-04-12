@@ -3,9 +3,9 @@
 
     <div class="py-20">
 
-        <p class="text-4xl mb-2">{{ $movie->title }}</p>
+        <p class="text-4xl mb-2 max-w-[748px]">{{ $movie->title }}</p>
 
-        <div class="mt-20 space-y-16">
+        <div class="mt-20">
             @foreach ($quotes as $quote )
             <x-movie :quote="$quote" />
 
