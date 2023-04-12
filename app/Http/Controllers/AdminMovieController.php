@@ -47,4 +47,9 @@ class AdminMovieController extends Controller
 
         return redirect()->route('admin.movies');
     }
+
+    public function redirectToMovies()
+    {
+        return redirect()->route('admin.movies');
+    }
 }
