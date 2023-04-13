@@ -5,19 +5,21 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Quote\UpdateQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\View\View;
 
 class AdminQuoteController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         return view('admin.quotes.index', [
             'quotes' => Quote::latest()->get(),
         ]);
     }
 
-    public function edit(Quote $quote)
+    public function edit(Quote $quote): View
     {
         return view('admin.quotes.edit', [
             'quote' => $quote,
@@ -25,7 +27,7 @@ class AdminQuoteController extends Controller
         ]);
     }
 
-    public function update(UpdateQuoteRequest $request, Quote $quote)
+    public function update(UpdateQuoteRequest $request, Quote $quote): RedirectResponse
     {
         $validated = $request->validated();
 
@@ -38,7 +40,7 @@ class AdminQuoteController extends Controller
         return redirect()->route('admin.quotes');
     }
 
-    public function destroy(Quote $quote)
+    public function destroy(Quote $quote): RedirectResponse
     {
         $quote->delete();
 
