@@ -30,6 +30,8 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest')->
 
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');
 
+Route::get('/admin', [AdminMovieController::class, 'redirectToMovies']);
+
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::group(['prefix' => 'quotes'], function () {
         Route::get('/create', [QuoteController::class, 'create'])->name('admin.quotes.create');
