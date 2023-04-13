@@ -27,8 +27,9 @@
                         <!-- Quote row -->
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap">
-                                <a href="{{ route('movies.show', $movie->id) }}"" class=" text-gray-900 font-medium">{{
-                                    $movie->title }}</a>
+                                <a href="{{ route('movies.show', $movie->id) }}"" class=" text-gray-900 font-medium">
+                                    {{ Str::words($movie->title, 6) }}
+                                </a>
                             </td>
 
                             <td class="px-6 py-4 whitespace-no-wrap">
