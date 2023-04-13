@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [QuoteController::class, 'index'])->name('home');
 
+Route::get('admin', [AdminMovieController::class, 'redirectToMovies'])->name('admin');
+
 Route::get('language/{locale}', [LanguageController::class, 'switchLanguage'])->name('switchLanguage');
 
 Route::get('/movies/{movie:id}', [MovieController::class, 'show'])->name('movies.show');
@@ -30,8 +32,6 @@ Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionController::class, 'store'])->middleware('guest')->name('login');
 
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');
-
-Route::get('/admin', [AdminMovieController::class, 'redirectToMovies']);
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::group(['prefix' => 'quotes', 'controller' => QuoteController::class], function () {

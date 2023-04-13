@@ -1,4 +1,4 @@
-<x-layout class="flex items-center justify-center">
+<x-layout class="flex items-center justify-center py-9">
 
     <x-languages />
 
