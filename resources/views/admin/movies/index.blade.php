@@ -28,7 +28,7 @@
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 <a href="{{ route('movies.show', $movie->id) }}"" class=" text-gray-900 font-medium">
-                                    {{ Str::words($movie->title, 6) }}
+                                    {{ Str::limit($movie->title, 50) }}
                                 </a>
                             </td>
 

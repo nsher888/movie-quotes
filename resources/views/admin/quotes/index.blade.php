@@ -27,12 +27,12 @@
                         <!-- Quote row -->
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap">
-                                <div class="text-gray-900 font-medium">{{ Str::words($quote->text, 6) }}</div>
+                                <div class="text-gray-900 font-medium">{{ Str::limit($quote->text, 40) }}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 <div class="text-gray-600 text-sm">
                                     <a href="/movies/{{ $quote->movie->id }}">
-                                        {{ Str::words($quote->movie->title, 6) }}
+                                        {{ Str::limit($quote->movie->title, 25) }}
                                     </a>
                                 </div>
                             </td>
