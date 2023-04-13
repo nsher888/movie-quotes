@@ -24,7 +24,7 @@ Movie Quotes app with random quote on the main page, movie page where you can vi
 
 ### Prerequisites
 
--   <img src="readme/assets/php.svg" width="35" style="position: relative; top: 4px" /> *PHP@7.2 and up*
+-   <img src="readme/assets/php.svg" width="35" style="position: relative; top: 4px" /> *PHP@8.1 and up*
 -   <img src="readme/assets/mysql.png" width="35" style="position: relative; top: 4px" /> _MYSQL@8 and up_
 -   <img src="readme/assets/npm.png" width="35" style="position: relative; top: 4px" /> _npm@6 and up_
 -   <img src="readme/assets/composer.png" width="35" style="position: relative; top: 6px" /> _composer@2 and up_
@@ -33,7 +33,7 @@ Movie Quotes app with random quote on the main page, movie page where you can vi
 
 ### Tech Stack
 
--   <img src="readme/assets/laravel.png" height="18" style="position: relative; top: 4px" /> [Laravel@6.x](https://laravel.com/docs/6.x) - back-end framework
+-   <img src="readme/assets/laravel.png" height="18" style="position: relative; top: 4px" /> [Laravel@10.x](https://laravel.com/docs/10.x) - back-end framework
 -   <img src="readme/assets/spatie.png" height="19" style="position: relative; top: 4px" /> [Spatie Translatable](https://github.com/spatie/laravel-translatable) - package for translation
 -   <img src="readme/assets/vite.svg" height="19" style="position: relative; top: 4px" /> [Vite](https://vitejs.dev/guide/) - build tool
 -   <img src="readme/assets/tailwind.png" height="19" style="position: relative; top: 4px" /> [Tailwind](https://tailwindcss.com/docs/installation) - CSS framework
@@ -45,7 +45,8 @@ Movie Quotes app with random quote on the main page, movie page where you can vi
 1\. First of all you need to clone Movie Quotes from github:
 
 ```sh
-git clone git@https://github.com/RedberryInternship/niko-shervashidze-movie-quotes
+git clone https://github.com/RedberryInternship/niko-shervashidze-movie-quotes.git
+
 ```
 
 2\. Next step requires you to run _composer install_ in order to install all the dependencies.
@@ -135,14 +136,12 @@ if you wish to see changes after changing styles with Tailwind CSS, execute:
 ├─── bootstrap
 ├─── config
 ├─── database
-├─── languages
+├─── lang
 │   ├─── en
 │   ├─── ka
-├─── packages
 ├─── public
 ├─── resources
 ├─── routes
-├─── scripts
 ├─── storage
 ├─── tests
 - .env
@@ -165,3 +164,7 @@ if you wish to see changes after changing styles with Tailwind CSS, execute:
 -   [Application Design](https://www.figma.com/file/IIJOKK5esgM8uK8pM3D59J/Movie-Quotes?node-id=0%3A1)
 -   [Commit message naming conventions](https://redberry.gitbook.io/resources/other/git-is-semantikuri-komitebi)
 -   [Project Specifications](https://redberry.gitbook.io/assignment-i-movie-quotes)
+
+## Live Preview
+
+Check out the [live preview](https://movie-quotes.nikolozs.redberryinternship.ge/) to see the app in action!
