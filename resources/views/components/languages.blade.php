@@ -2,11 +2,11 @@
     }}>
     @foreach($available_locales as $locale_name => $available_locale)
     @if($available_locale === $current_locale)
-    <div class="border-2 border-white rounded-full p-2">
+    <div class="border-2 border-white rounded-full p-2 text-black bg-white">
         <a>{{ $locale_name }}</a>
     </div>
     @else
-    <div class="border-2 border-white rounded-full p-2 text-black bg-white">
+    <div class="border-2 border-white rounded-full p-2">
         <a href="{{ route('switchLanguage', $available_locale) }}">{{ $locale_name }}</a>
     </div>
     @endif

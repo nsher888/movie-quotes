@@ -1,5 +1,5 @@
 <aside class="bg-white w-1/4 flex flex-col">
-    <div class="bg-gray-300 h-14 flex items-center justify-center gap-6 border border-b-black hover:bg-gray-400">
+    <div class="bg-white h-14 flex items-center justify-center gap-6 border border-b-black">
         <p class="text-black">
             {{ __('admin.hello') }}, {{ auth()->user()->username }}
         </p>
